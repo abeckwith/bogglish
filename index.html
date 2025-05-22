@@ -1,0 +1,180 @@
+<html>
+
+<head>
+   <title>BOGGLISH</title>
+   <meta name="author" content="Anthony Beckwith">
+   <meta name="contact" content="anthonyrbeckwith@gmail.com">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+   <link rel="manifest" href="/site.webmanifest">
+   <script src="main.js"></script>
+   <script src="all_words_178k.js"></script>
+   <script src="all_words_15K.js"></script>
+   <style>
+      body {
+         font-size: 40px;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         color: white;
+         background-color: #403157;
+      }
+
+      #missed {
+         color: #aaf4ff;
+      }
+
+      #word-guess {
+         font-size: 40px;
+         margin-top: 10px;
+      }
+
+      button {
+         background-color: #4CAF50;
+         /* Green */
+         border: none;
+         color: white;
+         padding: 10px 22px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 25px;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         border-radius: 7px;
+      }
+
+      #info {
+         font-size: 45px;
+      }
+
+      #msg {
+         margin-left: 10px;
+         ;
+      }
+
+      #allwords {
+         margin-left: 15px;
+         margin-right: 15px;
+         margin-top: 10px;
+         font-size: 28px;
+         width: 100%;
+         word-wrap: break-word;
+
+      }
+
+      .switch {
+         position: relative;
+         display: inline-block;
+         width: 60px;
+         height: 34px;
+         margin: 10px;
+      }
+
+      .switch input {
+         opacity: 0;
+         width: 0;
+         height: 0;
+      }
+
+      .slider {
+         position: absolute;
+         cursor: pointer;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: #2196F3;
+         -webkit-transition: .4s;
+         transition: .4s;
+      }
+
+      .slider:before {
+         position: absolute;
+         content: "";
+         height: 26px;
+         width: 26px;
+         left: 4px;
+         bottom: 4px;
+         background-color: white;
+         -webkit-transition: .4s;
+         transition: .4s;
+      }
+
+      input:checked+.slider {
+         background-color: #2196F3;
+      }
+
+      input:focus+.slider {
+         box-shadow: 0 0 1px #2196F3;
+      }
+
+      input:checked+.slider:before {
+         -webkit-transform: translateX(26px);
+         -ms-transform: translateX(26px);
+         transform: translateX(26px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+         border-radius: 34px;
+
+      }
+
+      .slider.round:before {
+         border-radius: 50%;
+      }
+
+      .word-length {
+         font-size: 20;
+         color: gray;
+         margin-right: 10px;
+      }
+
+      #length-counts {
+         position: relative;
+         float: right;
+         font-size: 27px;
+      }
+
+      #high-scores {
+         color: yellow;
+         font-size: 38px'
+
+      }
+
+      #dict_size {
+         font-size: 12px;
+         margin-left: 14px;
+
+      }
+
+      #instructions {
+         font-size: 21px;
+         font-style: italic;
+         color: #2196F3;
+      }
+   </style>
+</head>
+
+<body onload="init()">
+   <audio id="mySound">
+
+      <source src="walk.m4a" type="audio/mp3">
+
+   </audio>
+   <button onclick="giveUp()">Give Up</button>
+   <button onclick="getWord()">New Word</button><br>
+   <label class="switch">
+      <input type="checkbox" onclick="toggle_size(this)">
+      <span class="slider round"></span>
+   </label>
+   <div id="dict_size">large word set (178k)</div>
+
+   <div id="word"></div>
+   <div id="instructions"><br>Enter a word made from letters of the word above:</div>
+   <input type="text" id="word-guess"><span id="msg"></span>
+   <div id="info"></div>
+   <div id="allwords"></div>
+</body>
+
+</html>
