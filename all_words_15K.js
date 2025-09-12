@@ -20,7 +20,7 @@ var all_words_15K = [
    "pal",
    "asp",
    "pea",
-   "id", "ands",
+   "id", "ands","inter", "rein",
    "deli",
    "arc",
    "arcs",
