@@ -55,11 +55,11 @@ function getAlphaList(w) {
     return alpha;
 }
 function showDef(word) {
-  const url = "https://www.merriam-webster.com/dictionary/" + word; // Replace with your desired URL
-  const windowName = "smallWindow";
-  const features = "width=400,height=600,resizable=yes,scrollbars=yes";
+    const url = "https://www.merriam-webster.com/dictionary/" + word; // Replace with your desired URL
+    const windowName = "smallWindow";
+    const features = "width=400,height=600,resizable=yes,scrollbars=yes";
     console.log(url);
-  window.open(url, windowName, features);
+    window.open(url, windowName, features);
 }
 
 /**
@@ -94,12 +94,13 @@ function giveUp() {
         if (check2(element) && !correct_words.includes(element)) {
             //  msg2 += "<a href='#' onclick='getDefinition(\"" + element + "\")'>"+ element + "</a>, ";
             msg2 +=
-                "<span onclick=showDef('" + element + "')>" +element +
+                "<span onclick=showDef('" +
+                element +
+                "')>" +
+                element +
                 "</span>, ";
 
             wdCount++;
-
-         
         }
     });
     //show header for missed words:
@@ -296,27 +297,32 @@ function check(wordToCheck) {
 
     //show all correct words in a list:
     wordLength = 1;
+    msg +=
+        "<br><span style='font-size: 20px;color:#41b6ff'>Click any word to see it's definition:</span>";
+
     correct_words.forEach((element) => {
         if (element.length > wordLength) {
             //time for a new row
-                msg += "<br><span style='font-size: 20px;color:#41b6ff'>Click any word to see it's definition:</span>";
 
             wordLength = element.length;
             msg +=
                 "<br><span style='font-size:20; color:gray;margin-right:10px;'>" +
                 wordLength +
                 "</span>";
-                
         }
         //show most recent word in a different color:
         if (element === lastRightWord)
             msg +=
-                "<span onclick='showDef(\"" + element + "\")' style='color:#41b6Ff;font-size:28px;'>" +
+                "<span onclick='showDef(\"" +
+                element +
+                "\")' style='color:#41b6Ff;font-size:28px;'>" +
                 element +
                 ", </span>";
         else
             msg +=
-                "<span  onclick='showDef(\"" + element + "\")' style='color:white;font-size:28px'>" +
+                "<span  onclick='showDef(\"" +
+                element +
+                "\")' style='color:white;font-size:28px'>" +
                 element +
                 ", </span>";
     });
@@ -434,8 +440,14 @@ function getWord() {
             valid = true;
     }
     //show counts of each word size:
-    counts = document.getElementById("word").innerHTML = 
-        "<span onclick='showDef(\""+ mainWord+ "\")'>" + mainWord + "</span> (" + count + ") </span>";
+    counts = document.getElementById("word").innerHTML =
+        "<span onclick='showDef(\"" +
+        mainWord +
+        "\")'>" +
+        mainWord +
+        "</span> (" +
+        count +
+        ") </span>";
 
     //clear the entry box and put the focus back on it:
     input = document.getElementById("word-guess");
