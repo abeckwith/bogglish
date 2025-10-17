@@ -10,7 +10,7 @@ var all_words_15K = [
    "yon",
    "ton",
    "gone",
-   "soy",
+   "soy", "done",
    "rote",
    "stent",
    "sine",
