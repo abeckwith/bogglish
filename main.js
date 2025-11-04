@@ -298,7 +298,7 @@ function check(wordToCheck) {
     //show all correct words in a list:
     wordLength = 1;
     msg +=
-        "<br><span style='font-size: 20px;color:#41b6ff'>Click any word to see it's definition:</span>";
+        "<br><span style='font-size: 20px;color:#41b6ff'>Click any word to see its definition:</span>";
 
     correct_words.forEach((element) => {
         if (element.length > wordLength) {
@@ -395,7 +395,7 @@ function init() {
         }
     });
     getWord();
-    // alert("NEW FEATURE!!!  CLICK ANY WORD TO SEE IT'S DEFINITION! Works for..\n"+
+    // alert("NEW FEATURE!!!  CLICK ANY WORD TO SEE ITS DEFINITION! Works for..\n"+
     //     "- the main word\n- guessed words\n- missed words at the end"
     // )
     console.log("Small word set: " + all_words_15K.length);
